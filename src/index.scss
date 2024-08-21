@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Commissioner:wght@100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$w4: 400;
+$w7: 700;
+$fl: flex;
+$cen: center;
+$s1: 1rem;
+$s1h: 1.5rem;
+$s2: 2rem;
+$s11: 11px;
+$s12: 12px;
+$s13: 13px;
+$s14: 14px;
+$s15: 15px;
+$s10: 10px;
+$bg-w: white;
+$bg-lg: #e0f1e7;
+$col-primary: hsl(169, 82%, 27%);
+$col-err: hsl(0, 66%, 54%);
+$col-secondary: hsl(186, 15%, 59%);
+$col-dark: hsl(187, 24%, 22%);
+body {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-lg;
+  display: $fl;
+  justify-content: $cen;
+  form {
+    overflow: hidden;
+    background-color: $bg-w;
+    margin: 10% 0;
+    width: 600px;
+    display: $fl;
+    flex-direction: column;
+    border-radius: $s11;
+    padding: $s2;
+    .errorBorder {
+      border: 1px solid #b05e66;
+    }
+    .error {
+      font-size: $s14;
+      color: #b05e66;
+      margin-bottom: $s10;
+      font-weight: 550;
+    }
+    h2 {
+      margin-bottom: $s1;
+      color: $col-dark;
+    }
+    input,
+    textarea {
+      border-radius: 8px;
+      padding: $s12 $s1;
+      border: 1px solid $col-secondary;
+      outline: unset;
+      color: $col-dark;
+      margin-top: 6px;
+      cursor: pointer;
+      resize: none;
+    }
+    .query {
+      color: $col-dark;
+      font-size: $s12;
+    }
+    > div label {
+      display: $fl;
+      flex-direction: column;
+      margin-bottom: $s15;
+      span:not(.wrapper) {
+        color: $col-dark;
+        font-size: $s12;
+      }
+    }
+    .radio {
+      .radioBtnError {
+        margin-top: 0;
+      }
+      > div {
+        display: $fl;
+        align-items: $cen;
+        justify-content: space-between;
+        margin-bottom: 5px;
+
+        label {
+          display: $fl;
+          align-items: $cen;
+          border: 1px solid $col-secondary;
+          display: $fl;
+          flex-direction: row;
+          width: 265px;
+          border-radius: 8px;
+          padding: $s12 $s1;
+          color: $col-dark;
+          font-weight: 450;
+          margin-top: $s12;
+          font-size: $s14;
+          &.optionChecked {
+            border: 1px solid $col-primary;
+          }
+
+          cursor: pointer;
+          input {
+            display: none;
+          }
+          p {
+            margin-left: $s12;
+          }
+        }
+        .selected {
+          width: 20px;
+          height: 20px;
+        }
+        .unSelected {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: 1px solid $col-secondary;
+        }
+      }
+    }
+    .nameContainer {
+      display: $fl;
+      justify-content: space-between;
+      label {
+        margin-top: $s12;
+        width: 265px;
+      }
+      input:focus {
+        border: 1px solid $col-primary;
+      }
+    }
+    .checkbox {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      font-size: $s14;
+      color: $col-dark;
+      font-weight: $w4;
+      margin: $s12 0;
+      user-select: none;
+      .hidden {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+      label {
+        display: $fl;
+        flex-direction: row;
+        align-items: $cen;
+        cursor: pointer;
+      }
+      .wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        background-color: #ddd;
+        border: 2px solid #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+      }
+      .unChecked {
+        width: 14px;
+        height: 14px;
+        border: 1px solid $col-secondary;
+        margin-right: $s1;
+      }
+      .checkboxIcon {
+        margin-right: $s1;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    button {
+      background-color: $col-primary;
+      color: $bg-lg;
+      padding: $s1 $s2;
+      border: unset;
+      border-radius: 5px;
+      font-weight: 550;
+      font-size: $s14;
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 768px) {
+  body {
+    form {
+      width: 460px;
+      padding: $s2 $s1;
+
+      input,
+      textarea {
+        border-radius: 6px;
+      }
+
+      .radio {
+        > div {
+          label {
+            width: 210px;
+            border-radius: 6px;
+            font-size: $s13;
+          }
+        }
+      }
+      .nameContainer {
+        display: $fl;
+        justify-content: space-between;
+        label {
+          margin-top: $s12;
+          width: 210px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  body {
+    #root {
+      display: $fl;
+      justify-content: $cen;
+      width: 100%;
+    }
+    align-items: $cen;
+    form {
+      margin: 5% 0;
+      width: 92%;
+      padding: $s1;
+      align-self: center;
+
+      .error {
+        font-size: $s11;
+        margin-bottom: 5px;
+      }
+      > div {
+        label {
+          margin-top: 15px;
+          margin-bottom: 5px;
+        }
+      }
+      input,
+      textarea {
+        padding: $s10 0;
+      }
+      .query {
+        color: $col-dark;
+        font-size: $s12;
+      }
+
+      .radio {
+        .radioBtnError {
+          margin-top: 0;
+        }
+        > div {
+          flex-direction: column;
+          label {
+            width: 100%;
+            padding: $s10 $s1;
+            margin-top: 10px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .nameContainer {
+        flex-direction: column;
+        label {
+          width: 100%;
+          margin-top: 15px;
+          margin-bottom: 5px;
+        }
+      }
+      .checkbox {
+        font-size: $s12;
+
+        .unChecked {
+          width: 12px;
+          height: 12px;
+          margin-right: 8px;
+        }
+        .checkboxIcon {
+          margin-right: 8px;
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+}
